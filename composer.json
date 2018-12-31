@@ -1,0 +1,53 @@
+{
+    "name": "pixelfed/bartender",
+    "description": "Active ORM ActivityPub Library",
+    "keywords": [
+        "pixelfed",
+        "bartender"
+    ],
+    "homepage": "https://github.com/pixelfed/bartender",
+    "license": "AGPL-3.0-only",
+    "authors": [
+        {
+            "name": "Daniel Supernault",
+            "email": "danielsupernault@gmail.com",
+            "homepage": "https://pixelfed.org",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1"
+    },
+    "require-dev": {
+        "larapack/dd": "^1.0",
+        "phpunit/phpunit": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Pixelfed\\Bartender\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Pixelfed\\Bartender\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Pixelfed\\Bartender\\BartenderServiceProvider"
+            ],
+            "aliases": {
+                "Bartender": "Pixelfed\\Bartender\\BartenderFacade"
+            }
+        }
+    }
+}
